@@ -12,7 +12,7 @@ const RegisterPage = lazy(() => import('../pages/RegisterPage'));
 
 export const appRouts = [
   { path: HOME_ROUTE, element: <HomePage /> },
-  { path: CONTACTS_ROUTE, element: <ContactsPage /> },
-  { path: LOGIN_ROUTE, element: <LoginPage /> },
   { path: REGISTER_ROUTE, element: <RegisterPage /> },
+  { path: LOGIN_ROUTE, element: <LoginPage /> },
+  { path: CONTACTS_ROUTE, element: <ContactsPage /> },
 ];

@@ -1,4 +1,4 @@
-import { NavLink, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import {
   CONTACTS_ROUTE,
   HOME_ROUTE,
@@ -8,17 +8,18 @@ import {
 } from './config/routes';
 import NotfoundPage from './pages/NotfoundPage';
 import { Suspense } from 'react';
+import { NavigationBar, StyledLink } from './styledComponents/components';
 
 export const App = () => {
   return (
     <>
       <header>
-        <nav>
-          <NavLink to={HOME_ROUTE}>Home</NavLink>
-          <NavLink to={CONTACTS_ROUTE}>Contacts</NavLink>
-          <NavLink to={LOGIN_ROUTE}>Login</NavLink>
-          <NavLink to={REGISTER_ROUTE}>Register</NavLink>
-        </nav>
+        <NavigationBar>
+          <StyledLink to={HOME_ROUTE}>Home</StyledLink>
+          <StyledLink to={REGISTER_ROUTE}>Register</StyledLink>
+          <StyledLink to={LOGIN_ROUTE}>Login</StyledLink>
+          <StyledLink to={CONTACTS_ROUTE}>Contacts</StyledLink>
+        </NavigationBar>
       </header>
       <main>
         <Suspense fallback={<div>Loading...</div>}>
