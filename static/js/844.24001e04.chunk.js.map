@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/844.24001e04.chunk.js","mappings":"uKAQA,UANqB,WACnB,OACE,0CAEH,C","sources":["components/pages/ContactsPage.jsx"],"sourcesContent":["import React from 'react'\n\nconst ContactsPage = () => {\n  return (\n    <div>Contacts.Page</div>\n  )\n}\n\nexport default ContactsPage"],"names":[],"sourceRoot":""}
