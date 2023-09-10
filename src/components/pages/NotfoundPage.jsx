@@ -6,4 +6,4 @@ function Notfound() {
   )
 }
 
-export default Notfound
+export default Notfound;
