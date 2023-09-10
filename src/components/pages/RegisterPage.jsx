@@ -1,20 +1,28 @@
+import { registerUser } from 'components/redux/operations';
 import React from 'react';
+import { useDispatch } from 'react-redux';
 
 const RegisterPage = () => {
+  const dispatch = useDispatch();
 
+  const handleSubmit = event => {
+    event.preventDefault();
+    const name = event.currentTarget.elements.userName.value;
+    const email = event.currentTarget.elements.userEmail.value;
+    const password = event.currentTarget.elements.userPassword.value;
 
+    const formData = {
+      name,
+      email,
+      password,
+    };
 
-const handleSubmit = (event) => {
-  event.preventDefault();
-  const name = event.currentTarget.elements.userName.value;
-  const email = event.currentTarget.elements.userEmail.value;
-  const password = event.currentTarget.elements.userPassword.value;
-
-  console.log(name,email,  password)
-}
+    dispatch(registerUser(formData));
+  };
 
   return (
-    <h1>
+    <>
+      <h1>Register</h1>
       <form onSubmit={handleSubmit}>
         <label>
           <input
@@ -43,7 +51,7 @@ const handleSubmit = (event) => {
         </label>
         <button type="submit">Register</button>
       </form>
-    </h1>
+    </>
   );
 };
 

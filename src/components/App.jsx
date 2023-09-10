@@ -7,18 +7,44 @@ import {
   appRouts,
 } from './config/routes';
 import NotfoundPage from './pages/NotfoundPage';
-import { Suspense } from 'react';
+import { Suspense, useEffect } from 'react';
 import { NavigationBar, StyledLink } from './styledComponents/components';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectUserAuthention, selectUserData } from './redux/selectors';
+import { logoutUser, refreshUser } from './redux/operations';
 
 export const App = () => {
+  const dispatch = useDispatch();
+  const authenticated = useSelector(selectUserAuthention);
+  const userData = useSelector(selectUserData);
+
+  const handleLogOut = () => {
+    dispatch(logoutUser());
+  };
+
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
+
   return (
     <>
       <header>
         <NavigationBar>
           <StyledLink to={HOME_ROUTE}>Home</StyledLink>
-          <StyledLink to={REGISTER_ROUTE}>Register</StyledLink>
-          <StyledLink to={LOGIN_ROUTE}>Login</StyledLink>
-          <StyledLink to={CONTACTS_ROUTE}>Contacts</StyledLink>
+
+          {authenticated ? (
+            <>
+              <StyledLink to={CONTACTS_ROUTE}>Contacts</StyledLink>
+              <span>Hi, {userData.name}</span>
+              <button onClick={handleLogOut}>Logout</button>
+            </>
+          ) : (
+            <>
+              {' '}
+              <StyledLink to={LOGIN_ROUTE}>Login</StyledLink>
+              <StyledLink to={REGISTER_ROUTE}>Register</StyledLink>
+            </>
+          )}
         </NavigationBar>
       </header>
       <main>
