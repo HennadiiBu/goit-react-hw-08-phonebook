@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Outlet, Route, Routes } from 'react-router-dom';
 import {
   CONTACTS_ROUTE,
   HOME_ROUTE,
@@ -12,6 +12,7 @@ import { NavigationBar, StyledLink } from './styledComponents/components';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectUserAuthention, selectUserData } from './redux/selectors';
 import { logoutUser, refreshUser } from './redux/operations';
+import Loader from './Loader/Loader';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -48,7 +49,7 @@ export const App = () => {
         </NavigationBar>
       </header>
       <main>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<Loader />}>
           <Routes>
             <>
               {appRouts.map(({ path, element }) => (

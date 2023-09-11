@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-export const instance = axios.create({
+const instance = axios.create({
   baseURL: 'https://connections-api.herokuapp.com/',
 });
 
@@ -13,6 +13,8 @@ export const token = {
     instance.defaults.headers['Authorization'] = '';
   },
 };
+
+//...................Autorization................................
 
 export const registerUser = createAsyncThunk(
   '/users/registerUser',
@@ -60,7 +62,7 @@ export const refreshUser = createAsyncThunk(
       const state = thunkApi.getState();
       const usertoken = state.auth.token;
 
-if (!usertoken) return thunkApi.rejectWithValue('Please register first!');
+      if (!usertoken) return thunkApi.rejectWithValue('Please register first!');
 
       token.set(usertoken);
       const { data } = await instance.get('/users/current');
@@ -68,6 +70,41 @@ if (!usertoken) return thunkApi.rejectWithValue('Please register first!');
       return data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);
+    }
+  },
+  {
+    condition: (_, { getState }) => {
+      const state = getState();
+      const token = state.auth.token;
+      if (!token) return false;
+    },
+  }
+);
+
+//...................Contacts................................
+
+export const requestContacts = createAsyncThunk(
+  'contacts/requestContacts',
+  async (_, thunkApi) => {
+    try {
+      const { data } = await instance.get('/contacts');
+
+      return data;
+    } catch (error) {
+      thunkApi.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const requestAddContacts = createAsyncThunk(
+  'contacts/requestContacts',
+  async (contact, thunkApi) => {
+    try {
+      const { data } = await instance.post('/contacts', contact);
+
+      return data;
+    } catch (error) {
+      thunkApi.rejectWithValue(error.message);
     }
   }
 );
