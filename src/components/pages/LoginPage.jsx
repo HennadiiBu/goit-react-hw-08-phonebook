@@ -1,3 +1,4 @@
+import { Button, Container, TextField } from '@mui/material';
 import { loginUser } from 'components/redux/operations';
 import React from 'react';
 import { useDispatch } from 'react-redux';
@@ -19,29 +20,41 @@ const LoginPage = () => {
     dispatch(loginUser(formData));
   };
   return (
-    <>
-      <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
+    <Container>
+      <form
+        onSubmit={handleSubmit}
+        style={{
+          display: 'flex',
+          gap: '20px',
+          justifyContent: 'center',
+          alignItems: 'center',
+          marginTop:'20px'
+        }}
+      >
         <label>
-          <input
+          <TextField
             type="email"
             name="userEmail"
             placeholder="Enter your e-mail..."
             required
+            label="E-mail"
           />
         </label>
         <label>
-          <input
+          <TextField
             type="password"
             name="userPassword"
             placeholder="Enter your password..."
             minLength={7}
             required
+            label="Password"
           />
         </label>
-        <button type="submit">Register</button>
+        <Button type="submit" variant="contained">
+          Login
+        </Button>
       </form>
-    </>
+    </Container>
   );
 };
 

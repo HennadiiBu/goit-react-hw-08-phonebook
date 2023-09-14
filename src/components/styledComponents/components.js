@@ -5,18 +5,24 @@ import { Button, buttonClasses } from '@mui/base/Button';
 export const StyledLink = styled(NavLink)`
   text-decoration: none;
   color: black;
+  font-family: IBM Plex Sans, sans-serif;
+  font-weight: 800;
+  font-size: 0.875rem;
+  line-height: 1.5;
   &.active {
-    color: green;
+    color: #0072e5;
   }
 `;
 
 export const NavigationBar = styled('nav')`
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 30px;
   border: 1px solid;
   padding: 20px;
   background-color: azure;
+  width: '100vw';
 `;
 
 export const Container = styled('div')`
@@ -26,7 +32,6 @@ export const Container = styled('div')`
   flex-direction: column;
   align-items: center;
 `;
-
 
 const blue = {
   500: '#007FFF',
@@ -73,5 +78,5 @@ export const CustomButton = styled(Button)(
     opacity: 0.5;
     cursor: not-allowed;
   }
-  `,
+  `
 );

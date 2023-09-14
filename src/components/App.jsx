@@ -13,6 +13,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectUserAuthention, selectUserData } from './redux/selectors';
 import { logoutUser, refreshUser } from './redux/operations';
 import Loader from './Loader/Loader';
+import { Button } from '@mui/material';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -37,7 +38,9 @@ export const App = () => {
             <>
               <StyledLink to={CONTACTS_ROUTE}>Contacts</StyledLink>
               <span>{userData.email}</span>
-              <button onClick={handleLogOut}>Logout</button>
+              <Button onClick={handleLogOut} variant="contained">
+                Logout
+              </Button>
             </>
           ) : (
             <>
