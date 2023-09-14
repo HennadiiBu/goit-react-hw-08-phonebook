@@ -96,11 +96,11 @@ export const requestContacts = createAsyncThunk(
   }
 );
 
-export const requestAddContacts = createAsyncThunk(
-  'contacts/requestContacts',
-  async (contact, thunkApi) => {
+export const addContact = createAsyncThunk(
+  'contacts/addContact',
+  async (formData, thunkApi) => {
     try {
-      const { data } = await instance.post('/contacts', contact);
+      const { data } = await instance.post('/contacts', formData);
 
       return data;
     } catch (error) {

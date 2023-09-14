@@ -1,5 +1,5 @@
 import Loader from 'components/Loader/Loader';
-import { requestContacts } from 'components/redux/operations';
+import { addContact, requestContacts } from 'components/redux/operations';
 import {
   selectContacts,
   selectContactsError,
@@ -20,11 +20,38 @@ const ContactsPage = () => {
 
   const showContacts = Array.isArray(contacts) && contacts.length > 0;
 
+  const handleSubmit = event => {
+    event.preventDefault();
+
+    const name = event.currentTarget.elements.contactName.value;
+    const number = event.currentTarget.elements.contactNumber.value;
+
+    const formData = {
+      name,
+      number,
+    };
+
+    dispatch(addContact(formData));
+    event.currentTarget.reset();
+  };
+
   return (
     <>
       <div>
         <h1>Phonebook</h1>
-        <form></form>
+        <form onSubmit={handleSubmit}>
+          <label>
+            <p>Name: </p>
+            <input type="text" required name="contactName" minLength={2} />
+          </label>
+          <label>
+            <p>Number: </p>
+            <input type="text" required name="contactNumber" minLength={6} />
+          </label>
+          <div>
+            <button type="submit">Add contact</button>
+          </div>
+        </form>
         {error !== null && (
           <p>
             Oops something went wrong. Please, try again later. Error: {error}
