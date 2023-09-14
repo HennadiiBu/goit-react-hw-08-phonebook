@@ -7,6 +7,7 @@ import {
 import {
   selectContacts,
   selectContactsError,
+  selectContactsFilter,
   selectContactsIsLoading,
 } from 'components/redux/selectors';
 import {
@@ -20,12 +21,14 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Stack from '@mui/system/Stack';
 import { FocusTrap } from '@mui/base/FocusTrap';
+import { findContact } from 'components/redux/contactsReducer';
 
 const ContactsPage = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
   const isLoading = useSelector(selectContactsIsLoading);
   const error = useSelector(selectContactsError);
+  const filter = useSelector(selectContactsFilter);
 
   useEffect(() => {
     dispatch(requestContacts());
@@ -49,6 +52,17 @@ const ContactsPage = () => {
   };
 
   const [open, setOpen] = React.useState(false);
+
+  const handleChange = event => {
+    dispatch(findContact(event.target.value.toLowerCase().trim()));
+  };
+
+  const getVisibleContacts = () => {
+    return contacts.filter(({ name }) =>
+      name.toLowerCase().trim().includes(filter.toLowerCase())
+    );
+  };
+  const visibleContacts = getVisibleContacts();
 
   return (
     <>
@@ -137,6 +151,8 @@ const ContactsPage = () => {
                       name="contactName"
                       minLength={2}
                       label="Find Contact:"
+                      onChange={handleChange}
+                      value={filter}
                     />
                   </label>
                 )}
@@ -159,7 +175,7 @@ const ContactsPage = () => {
           }}
         >
           {showContacts &&
-            contacts.map(contact => {
+            visibleContacts.map(contact => {
               return (
                 <li
                   key={contact.id}
