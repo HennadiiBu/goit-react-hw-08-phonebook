@@ -36,7 +36,7 @@ export const App = () => {
           {authenticated ? (
             <>
               <StyledLink to={CONTACTS_ROUTE}>Contacts</StyledLink>
-              <span>Hi, {userData.name}</span>
+              <span>{userData.email}</span>
               <button onClick={handleLogOut}>Logout</button>
             </>
           ) : (
