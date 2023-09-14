@@ -1,7 +1,6 @@
 import { PrivateRoute } from 'components/PrivateRoute/PrivateRoute';
 import { RestrictedRoute } from 'components/RestrictedRoute/RestrictedRoute';
 import { lazy } from 'react';
-import { Outlet } from 'react-router-dom';
 
 export const HOME_ROUTE = '/';
 export const CONTACTS_ROUTE = '/contacts';
