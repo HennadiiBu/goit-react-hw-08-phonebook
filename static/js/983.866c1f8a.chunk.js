@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgoit_react_hw_08_phonebook=self.webpackChunkgoit_react_hw_08_phonebook||[]).push([[983],{3983:function(e,o,t){t.r(o);t(2791);var n=t(184);o.default=function(){return(0,n.jsx)("img",{src:t(8048),alt:"phone-book",style:{backgroundPosition:"center",backgroundSize:"cover",backgroundRepeat:"no-repeat",width:"100vw",height:"100vh"}})}},8048:function(e,o,t){e.exports=t.p+"static/media/Telefonbog_ubt-1.3ce6a257763733107009.jpg"}}]);
+//# sourceMappingURL=983.866c1f8a.chunk.js.map
