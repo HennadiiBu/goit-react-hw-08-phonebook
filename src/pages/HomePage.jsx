@@ -3,7 +3,7 @@ import React from 'react';
 const HomePage = () => {
   return (
     <img
-      src={require('../images/Telefonbog_ubt-1.jpg')}
+      src={require('../../src/components/images/Telefonbog_ubt-1.jpg')}
       alt="phone-book"
       style={{
         backgroundPosition: 'center',

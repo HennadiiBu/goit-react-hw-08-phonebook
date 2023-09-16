@@ -7,10 +7,10 @@ export const CONTACTS_ROUTE = '/contacts';
 export const LOGIN_ROUTE = '/login';
 export const REGISTER_ROUTE = '/register';
 
-const HomePage = lazy(() => import('../pages/HomePage'));
-const ContactsPage = lazy(() => import('../pages/ContactsPage'));
-const LoginPage = lazy(() => import('../pages/LoginPage'));
-const RegisterPage = lazy(() => import('../pages/RegisterPage'));
+const HomePage = lazy(() => import('../../pages/HomePage'));
+const ContactsPage = lazy(() => import('../../pages/ContactsPage'));
+const LoginPage = lazy(() => import('../../pages/LoginPage'));
+const RegisterPage = lazy(() => import('../../pages/RegisterPage'));
 
 export const appRouts = [
   { path: HOME_ROUTE, element: <HomePage /> },

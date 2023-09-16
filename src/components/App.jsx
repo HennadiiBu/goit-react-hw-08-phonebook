@@ -1,28 +1,14 @@
 import { Route, Routes } from 'react-router-dom';
-import {
-  CONTACTS_ROUTE,
-  HOME_ROUTE,
-  LOGIN_ROUTE,
-  REGISTER_ROUTE,
-  appRouts,
-} from './config/routes';
-import NotfoundPage from './pages/NotfoundPage';
+import { appRouts } from './config/routes';
+import NotfoundPage from '../pages/NotfoundPage';
 import { Suspense, useEffect } from 'react';
-import { NavigationBar, StyledLink } from './styledComponents/components';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectUserAuthention, selectUserData } from './redux/selectors';
-import { logoutUser, refreshUser } from './redux/operations';
+import { useDispatch } from 'react-redux';
+import { refreshUser } from './redux/operations';
 import Loader from './Loader/Loader';
-import { Button } from '@mui/material';
+import Header from './Header/Header';
 
 export const App = () => {
   const dispatch = useDispatch();
-  const authenticated = useSelector(selectUserAuthention);
-  const userData = useSelector(selectUserData);
-
-  const handleLogOut = () => {
-    dispatch(logoutUser());
-  };
 
   useEffect(() => {
     dispatch(refreshUser());
@@ -30,27 +16,7 @@ export const App = () => {
 
   return (
     <>
-      <header>
-        <NavigationBar>
-          <StyledLink to={HOME_ROUTE}>Home</StyledLink>
-
-          {authenticated ? (
-            <>
-              <StyledLink to={CONTACTS_ROUTE}>Contacts</StyledLink>
-              <span>{userData.email}</span>
-              <Button onClick={handleLogOut} variant="contained">
-                Logout
-              </Button>
-            </>
-          ) : (
-            <>
-              {' '}
-              <StyledLink to={LOGIN_ROUTE}>Login</StyledLink>
-              <StyledLink to={REGISTER_ROUTE}>Register</StyledLink>
-            </>
-          )}
-        </NavigationBar>
-      </header>
+      <Header />
       <main>
         <Suspense fallback={<Loader />}>
           <Routes>
