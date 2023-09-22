@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/goit-react-hw-08-phonebook/static/css/main.b5320759.css",
-    "main.js": "/goit-react-hw-08-phonebook/static/js/main.7bda3cb6.js",
-    "static/js/983.62273059.chunk.js": "/goit-react-hw-08-phonebook/static/js/983.62273059.chunk.js",
+    "main.js": "/goit-react-hw-08-phonebook/static/js/main.50ad437b.js",
+    "static/js/983.6f3a53f0.chunk.js": "/goit-react-hw-08-phonebook/static/js/983.6f3a53f0.chunk.js",
     "static/js/775.942133ff.chunk.js": "/goit-react-hw-08-phonebook/static/js/775.942133ff.chunk.js",
     "static/js/637.9cf6ebba.chunk.js": "/goit-react-hw-08-phonebook/static/js/637.9cf6ebba.chunk.js",
     "static/js/432.3dda706b.chunk.js": "/goit-react-hw-08-phonebook/static/js/432.3dda706b.chunk.js",
@@ -10,11 +10,11 @@
     "static/js/805.fe58ab07.chunk.js": "/goit-react-hw-08-phonebook/static/js/805.fe58ab07.chunk.js",
     "static/media/igrushka_telefonnaia_budka_kniga_67700_1280x720.jpg": "/goit-react-hw-08-phonebook/static/media/igrushka_telefonnaia_budka_kniga_67700_1280x720.be0c5c4b89b21351f572.jpg",
     "static/media/igrushka_telefonnaia_budka_kniga_67700_1024x768.jpg": "/goit-react-hw-08-phonebook/static/media/igrushka_telefonnaia_budka_kniga_67700_1024x768.b37028f931a6c7acab7c.jpg",
-    "static/media/igrushka_telefonnaia_budka_kniga_67700_320x480.jpg": "/goit-react-hw-08-phonebook/static/media/igrushka_telefonnaia_budka_kniga_67700_320x480.bd984cb96539d6acaff8.jpg",
+    "static/media/igrushka_telefonnaia_budka_kniga_67700_360x640.jpg": "/goit-react-hw-08-phonebook/static/media/igrushka_telefonnaia_budka_kniga_67700_360x640.d32bd1656c0ffa4785db.jpg",
     "index.html": "/goit-react-hw-08-phonebook/index.html",
     "main.b5320759.css.map": "/goit-react-hw-08-phonebook/static/css/main.b5320759.css.map",
-    "main.7bda3cb6.js.map": "/goit-react-hw-08-phonebook/static/js/main.7bda3cb6.js.map",
-    "983.62273059.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/983.62273059.chunk.js.map",
+    "main.50ad437b.js.map": "/goit-react-hw-08-phonebook/static/js/main.50ad437b.js.map",
+    "983.6f3a53f0.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/983.6f3a53f0.chunk.js.map",
     "775.942133ff.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/775.942133ff.chunk.js.map",
     "637.9cf6ebba.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/637.9cf6ebba.chunk.js.map",
     "432.3dda706b.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/432.3dda706b.chunk.js.map",
@@ -23,6 +23,6 @@
   },
   "entrypoints": [
     "static/css/main.b5320759.css",
-    "static/js/main.7bda3cb6.js"
+    "static/js/main.50ad437b.js"
   ]
 }
