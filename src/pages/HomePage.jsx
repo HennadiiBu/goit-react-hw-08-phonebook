@@ -46,7 +46,7 @@ const HomePage = () => {
       </Tablet>
       <Mobile>
         <img
-          src={require('../../src/components/images/igrushka_telefonnaia_budka_kniga_67700_320x480.jpg')}
+          src={require('../../src/components/images/igrushka_telefonnaia_budka_kniga_67700_360x640.jpg')}
           alt="phone-book"
           style={{
             backgroundPosition: 'center',
